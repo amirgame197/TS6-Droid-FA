@@ -33,11 +33,11 @@ private fun PreviewChatPanel() {
                         selectedTabIndex = 0,
                         modifier = Modifier.weight(1f),
                     ) {
-                        Tab(selected = true, onClick = {}, text = { Text("频道") })
-                        Tab(selected = false, onClick = {}, text = { Text("私信") })
+                        Tab(selected = true, onClick = {}, text = { Text("Channel") })
+                        Tab(selected = false, onClick = {}, text = { Text("Private Message") })
                     }
                     IconButton(onClick = {}) {
-                        Icon(Icons.Default.Close, "关闭")
+                        Icon(Icons.Default.Close, "Close")
                     }
                 }
 
@@ -47,17 +47,17 @@ private fun PreviewChatPanel() {
                     modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
-                    FilterChip(selected = true, onClick = {}, label = { Text("全部") })
-                    FilterChip(selected = false, onClick = {}, label = { Text("用户A") })
+                    FilterChip(selected = true, onClick = {}, label = { Text("All") })
+                    FilterChip(selected = false, onClick = {}, label = { Text("User") })
                 }
 
                 Spacer(Modifier.height(8.dp))
 
                 val messages = listOf(
-                    "你好！欢迎来到频道" to true,
-                    "大家好，这是一条测试消息" to false,
-                    "毛玻璃效果看起来不错" to true,
-                    "背景图片也能看到" to false,
+                    "Hello! Welcome to the channel." to true,
+                    "Hello everyone, this is a test message." to false,
+                    "The frosted glass effect looks good." to true,
+                    "The background image is also visible." to false,
                 )
                 messages.forEach { (text, isMe) ->
                     Row(
@@ -87,7 +87,7 @@ private fun PreviewChatPanel() {
                     value = "",
                     onValueChange = {},
                     modifier = Modifier.fillMaxWidth().padding(8.dp),
-                    placeholder = { Text("频道消息…") },
+                    placeholder = { Text("Channel messages...") },
                 )
             }
         }
@@ -112,19 +112,19 @@ private fun PreviewSettingsDialog() {
                     .padding(32.dp),
             ) {
                 Column(modifier = Modifier.padding(24.dp)) {
-                    Text("设置", style = MaterialTheme.typography.headlineSmall)
+                    Text("Set up", style = MaterialTheme.typography.headlineSmall)
                     Spacer(Modifier.height(16.dp))
 
-                    Text("音量增益 : ×1.5", style = MaterialTheme.typography.bodyLarge)
+                    Text("Audio Gain : ×1.5", style = MaterialTheme.typography.bodyLarge)
                     Slider(value = 1.5f, onValueChange = {}, valueRange = 1.0f..8.0f, steps = 13)
                     Spacer(Modifier.height(8.dp))
 
                     listOf(
-                        "显示视频链接缩略图" to false,
-                        "自动加载图片" to true,
-                        "启用悬浮窗" to false,
-                        "我是二刺螈" to true,
-                        "麦克风降噪" to true,
+                        "Video link thumbnails" to false,
+                        "Auto-load images" to true,
+                        "Enable floating window" to false,
+                        "Change background image" to true,
+                        "Microphone noise suppression" to true,
                     ).forEach { (label, checked) ->
                         Row(
                             modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
@@ -149,13 +149,13 @@ private fun PreviewBottomNav() {
                 selected = true,
                 onClick = {},
                 icon = { Icon(AppIcons.Home, contentDescription = null) },
-                label = { Text("主页") },
+                label = { Text("Home") },
             )
             NavigationBarItem(
                 selected = false,
                 onClick = {},
                 icon = { Icon(AppIcons.Settings, contentDescription = null) },
-                label = { Text("设置") },
+                label = { Text("Settings") },
             )
         }
     }
@@ -183,7 +183,7 @@ private fun PreviewBookmarkCard() {
                     Text("yuaxi.cn:9987", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
                 FilledTonalButton(onClick = {}) {
-                    Text("连接")
+                    Text("Connect")
                 }
             }
         }

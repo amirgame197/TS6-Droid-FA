@@ -47,6 +47,24 @@ A free, lightweight TeamSpeak 3/6 Android client built with Jetpack Compose and 
 
 ## Changelog
 
+### v2.1.9-Han (2026-10-30)
+
+**New: Persian (Farsi) Localization**
+
+- Added Persian as a selectable app language, with translations across the app and Persian-matched screenshots.
+- English is now the default language for new installations instead of Simplified Chinese.
+- Improved the Android display name and Persian wording in several places, and uses "AndroidUser" when no default nickname is supplied.
+
+**App Identity Updates**
+
+- Changed the application ID to `com.app.ts6droid` to make this edition install separately from other TS6 Droid variants.
+- Connected in-app update checks and release links to this repository.
+- Some basic link changes to point the app to this fork.
+
+**Documentation**
+
+- Translated the README and Actions workflow messages into English.
+
 ### v2.1.8-Han (2026-10-20)
 
 **New: Online / Away / Do Not Disturb (Desktop-style status menu)**

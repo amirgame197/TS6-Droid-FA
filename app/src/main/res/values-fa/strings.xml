@@ -77,7 +77,7 @@
     <string name="wallpaper_export_all">ذخیره کردن همه</string>
     <string name="wallpaper_export_done">%1$d عکس در گالری ذخیره شد</string>
     <string name="wallpaper_export_failed">ذخیره کردن در گالری ناموفق بود</string>
-    <string name="session_running">سرور متصل</string>
+    <string name="session_running">متصل به سرور</string>
     <string name="session_running_desc">این اتصال در پس‌زمینه هم متصل باقی می‌ماند</string>
     <string name="back_to_session">برگشتن به سرور</string>
     <string name="back_to_home">برگشت به خانه</string>
