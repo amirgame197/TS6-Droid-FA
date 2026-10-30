@@ -26,19 +26,19 @@ class AwayStatusTest {
     fun `away and do-not-disturb are away states with their own defaults`() {
         assertTrue(AwayStatus.AWAY.away)
         assertTrue(AwayStatus.DND.away)
-        assertEquals("离开", AwayStatus.AWAY.message(""))
-        assertEquals("请勿打扰", AwayStatus.DND.message(""))
+        assertEquals("Away", AwayStatus.AWAY.message(""))
+        assertEquals("Do Not Disturb", AwayStatus.DND.message(""))
     }
 
     @Test
     fun `a typed message wins over the default and is trimmed`() {
         assertEquals("in a meeting", AwayStatus.AWAY.message("  in a meeting  "))
-        assertEquals("复盘", AwayStatus.DND.message("复盘"))
+        assertEquals("Custom Message", AwayStatus.DND.message("Custom Message"))
     }
 
     @Test
     fun `blank input falls back to the default message`() {
-        assertEquals("离开", AwayStatus.AWAY.message("   "))
-        assertEquals("请勿打扰", AwayStatus.DND.message(""))
+        assertEquals("Away", AwayStatus.AWAY.message("   "))
+        assertEquals("Do Not Disturb", AwayStatus.DND.message(""))
     }
 }
