@@ -11,25 +11,25 @@ A free, lightweight TeamSpeak 3/6 Android client built with Jetpack Compose and 
 <div align="center">
 <table>
   <tr>
-    <td align="center"><a href="img/screenshow1.jpg"><img src="img/screenshow1.jpg" width="240" alt="Home: Anime Background Disabled"/></a></td>
-    <td align="center"><a href="img/screenshow2.jpg"><img src="img/screenshow2.jpg" width="240" alt="Home: Anime Background Enabled"/></a></td>
+    <td align="center"><a href="img/screenshow1.jpg"><img src="img/screenshow1.jpg" width="240" alt="Home: Custom Background Disabled"/></a></td>
+    <td align="center"><a href="img/screenshow2.jpg"><img src="img/screenshow2.jpg" width="240" alt="Home: Custom Background Enabled"/></a></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><sub>Home (Anime Background Disabled / Enabled)</sub></td>
+    <td colspan="2" align="center"><sub>Home (Custom Background Disabled / Enabled)</sub></td>
   </tr>
   <tr>
-    <td align="center"><a href="img/screenshow3.jpg"><img src="img/screenshow3.jpg" width="240" alt="Settings: Anime Background Disabled"/></a></td>
-    <td align="center"><a href="img/screenshow4.jpg"><img src="img/screenshow4.jpg" width="240" alt="Settings: Anime Background Enabled"/></a></td>
+    <td align="center"><a href="img/screenshow3.jpg"><img src="img/screenshow3.jpg" width="240" alt="Settings: Custom Background Disabled"/></a></td>
+    <td align="center"><a href="img/screenshow4.jpg"><img src="img/screenshow4.jpg" width="240" alt="Settings: Custom Background Enabled"/></a></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><sub>Settings (Anime Background Disabled / Enabled)</sub></td>
+    <td colspan="2" align="center"><sub>Settings (Custom Background Disabled / Enabled)</sub></td>
   </tr>
   <tr>
-    <td align="center"><a href="img/screenshow5.jpg"><img src="img/screenshow5.jpg" width="240" alt="Server: Anime Background Disabled"/></a></td>
-    <td align="center"><a href="img/screenshow6.jpg"><img src="img/screenshow6.jpg" width="240" alt="Server: Anime Background Enabled"/></a></td>
+    <td align="center"><a href="img/screenshow5.jpg"><img src="img/screenshow5.jpg" width="240" alt="Server: Custom Background Disabled"/></a></td>
+    <td align="center"><a href="img/screenshow6.jpg"><img src="img/screenshow6.jpg" width="240" alt="Server: Custom Background Enabled"/></a></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><sub>Server (Anime Background Disabled / Enabled)</sub></td>
+    <td colspan="2" align="center"><sub>Server (Custom Background Disabled / Enabled)</sub></td>
   </tr>
   <tr>
     <td align="center"><a href="img/screenshow7.jpg"><img src="img/screenshow7.jpg" width="240" alt="Floating Window: Expanded Panel"/></a></td>

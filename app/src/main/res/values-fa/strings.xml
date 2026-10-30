@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
+    <string name="app_label">TS Droid</string>
     <string name="app_name">تیم اسپیک</string>
     <string name="channel_connection">اتصال</string>
     <string name="channel_connection_desc">اعلان سرور</string>
@@ -36,7 +37,7 @@
     <string name="bookmarks">بوک‌مارک ها</string>
     <string name="no_bookmarks">هیچ بوک‌مارکی وجود ندارد</string>
     <string name="manual_connection">افزودن سرور</string>
-    <string name="auto_reconnect">اتصال خودکار</string>
+    <string name="auto_reconnect">اتصال مجدد خودکار</string>
     <string name="remove">حذف</string>
     <string name="edit">ویرایش</string>
     <string name="select_channel">انتخاب کانال</string>
@@ -119,7 +120,7 @@
     <string name="identity_import_failed">وارد کردن ناموفق بود: فایل هویت نامعتبر است</string>
     <string name="identity_warning">هویت شما همان رمز اکانت شما است؛ با وارد کردن آن، هویت سرور شما تغییر می‌کند و همچنین فایل خروجی باید در جای امنی نگهداری شود.</string>
     <string name="mic_mode">حالت میکروفن</string>
-    <string name="mic_mode_vad">فعالیت صدا</string>
+    <string name="mic_mode_vad">فعال شدن خودکار</string>
     <string name="mic_mode_open">همیشه فعال</string>
     <string name="vad_threshold">آستانه فعالیت: %1$d دسی‌بل</string>
     <string name="vad_threshold_hint">صوتِ بالاتر از این آستانه خودکار پخش می‌شود. مقدار ۴۵- دسی‌بل برای اکثر محیط ها مناسب است.</string>
@@ -152,7 +153,7 @@
     <string name="update_no_changelog">هیچ فهرست تغییراتی موجود نیست</string>
     <string name="close">بستن</string>
     <string name="filter_all">همه</string>
-    <string name="message_channel_placeholder">پیام کانال\u2026</string>
+    <string name="message_channel_placeholder">پیام در کانال\u2026</string>
     <string name="message_private_placeholder">پیام دادن به %1$s\u2026</string>
     <string name="send">ارسال</string>
     <string name="user_fallback">کاربر #%1$d</string>
@@ -290,14 +291,14 @@
     <string name="whisper_target_offline">(آفلاین)</string>
     <string name="whisper_talk_toast">%1$s دارد با شما زمزمه می‌کند</string>
     <string name="whisper_list_title">فهرست زمزمه ها</string>
-    <string name="whisper_list_hint">وقتی این فهرست خالی نباشد، دکمه نارنجی زمزمه کنار میکروفن را نگه دارید تا فقط با این مخاطبان صحبت کنید؛ پیام‌های متنی هم برای آن‌ها فرستاده می‌شوند. برای برگشتن به کانال، دکمه را رها کنید.</string>
+    <string name="whisper_list_hint">وقتی این فهرست خالی نیست، دکمه نارنجی زمزمه کنار میکروفن را نگه دارید تا فقط با این مخاطبان صحبت کنید؛ پیام‌های متنی هم برای آن‌ها فرستاده می‌شوند. برای برگشتن به کانال، دکمه را رها کنید.</string>
     <string name="whisper_section_groups">گروه‌های سرور</string>
     <string name="whisper_section_channels">کانال‌ها</string>
     <string name="whisper_section_members">اعضا</string>
     <string name="whisper_group_members">%1$d نفر آنلاین</string>
     <string name="whisper_group_fallback">گروه #%1$d</string>
     <string name="whisper_groups_unavailable">سرور هنوز فهرست گروه ها را ارسال نکرده است</string>
-    <string name="whisper_no_members">هنوز عضوی جداگانه اضافه نشده است؛ برای افزودن، دکمه زمزمه کنار نام یکی از اعضا را لمس کنید.</string>
+    <string name="whisper_no_members">هنوز عضوی به‌طور جداگانه اضافه نشده است؛ برای افزودن، دکمه زمزمه کنار نام یکی از اعضا را لمس کنید.</string>
     <string name="away_status_title">وضعیت</string>
     <string name="away_status_hint">دیگران وضعیت شما را می‌بینند. حالت "مزاحم نشوید" میکروفن را تا وقتی دوباره آنلاین شوید قطع می‌کند.</string>
     <string name="away_status_online">آنلاین</string>
@@ -305,8 +306,8 @@
     <string name="away_status_away">غایب</string>
     <string name="away_status_away_desc">نشان غایبی نمایش داده می‌شود؛ میکروفن همچنان فعال است</string>
     <string name="away_status_dnd">مزاحم نشوید</string>
-    <string name="away_status_dnd_desc">وضعیت نمایش داده می‌شود و میکروفن قطع می‌شود</string>
-    <string name="away_message_label">پیام وضعیت</string>
+    <string name="away_status_dnd_desc">نشان مزاحم نشوید نمایش داده می‌شود و میکروفن قطع می‌شود</string>
+    <string name="away_message_label">دلیل وضعیت</string>
     <string name="away_message_save">ذخیره</string>
     <string name="away_marker">غایب</string>
     <string name="away_status_change">تغییر وضعیت</string>
