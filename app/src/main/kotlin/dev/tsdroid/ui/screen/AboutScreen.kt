@@ -80,7 +80,7 @@ fun AboutScreen(onBack: () -> Unit) {
 @Composable
 private fun AboutContent(onBack: () -> Unit) {
     val context = LocalContext.current
-    val repoUrl = "https://github.com/YUAXI/TS6_Droid_CN"
+    val repoUrl = "https://github.com/amirgame197/TS6-Droid-FA"
     val scrollState = rememberScrollState()
 
     var contributors by remember { mutableStateOf<List<GitHubContributor>>(emptyList()) }
@@ -89,7 +89,7 @@ private fun AboutContent(onBack: () -> Unit) {
     LaunchedEffect(Unit) {
         withContext(Dispatchers.IO) {
             try {
-                val url = URL("https://api.github.com/repos/YUAXI/TS6_Droid_CN/contributors")
+                val url = URL("https://api.github.com/repos/amirgame197/TS6-Droid-FA/contributors")
                 val conn = url.openConnection()
                 conn.connectTimeout = 10000
                 conn.readTimeout = 10000
