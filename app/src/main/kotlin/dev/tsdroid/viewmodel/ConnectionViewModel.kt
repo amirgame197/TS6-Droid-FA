@@ -18,6 +18,7 @@ import dev.tsdroid.bridge.nicknameWithCollisionSuffix
 import dev.tsdroid.han.R
 import dev.tsdroid.data.BookmarkStore
 import dev.tsdroid.data.ServerBookmark
+import dev.tsdroid.data.TsServerLink
 import dev.tsdroid.service.TsConnectionService
 import dev.tslib.Channel
 import dev.tslib.ChannelTree
@@ -42,6 +43,7 @@ class ConnectionViewModel(application: Application) : AndroidViewModel(applicati
         private const val MIN_NICKNAME_LENGTH = 3
         /** Survit aux recréations du ViewModel dans le même processus. */
         private var autoReconnectAttempted = false
+        private var serverLinkApplied = false
 
         /**
          * Whether this process has already decided what to do about the session the service is
@@ -297,7 +299,7 @@ class ConnectionViewModel(application: Application) : AndroidViewModel(applicati
     }
 
     fun tryAutoReconnect(onConnected: () -> Unit) {
-        if (autoReconnectAttempted) return
+        if (autoReconnectAttempted || serverLinkApplied) return
         autoReconnectAttempted = true
         // Never stack a second connection on top of a live one: if the service is already running a
         // session, the only sensible move is to jump back into it, and only on a fresh start.
@@ -342,6 +344,15 @@ class ConnectionViewModel(application: Application) : AndroidViewModel(applicati
 
     fun removeBookmark(index: Int) {
         viewModelScope.launch { bookmarkStore.remove(index) }
+    }
+
+    fun applyServerLink(link: TsServerLink) {
+        serverLinkApplied = true
+        address.value = link.address
+        nickname.value = link.nickname.orEmpty()
+        password.value = link.password.orEmpty()
+        channel.value = link.channel.orEmpty()
+        _editingIndex.value = -1
     }
 
     fun editBookmark(bookmark: ServerBookmark, index: Int) {

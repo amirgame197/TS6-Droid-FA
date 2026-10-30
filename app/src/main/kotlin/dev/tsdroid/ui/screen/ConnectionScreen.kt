@@ -90,6 +90,7 @@ import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.lifecycle.viewmodel.compose.viewModel
+import dev.tsdroid.data.TsServerLink
 import dev.tsdroid.han.R
 import dev.tslib.ConnectionState
 import dev.tsdroid.service.TsConnectionService
@@ -117,6 +118,8 @@ fun ConnectionScreen(
     onNavigateToAbout: () -> Unit,
     /** What startup read, so the first frame already paints the wallpaper the splash prepared. */
     initialAnimeBackground: Boolean,
+    serverLink: TsServerLink? = null,
+    onServerLinkConsumed: () -> Unit = { },
     viewModel: ConnectionViewModel = viewModel(),
 ) {
     val address by viewModel.address.collectAsStateWithLifecycle()
@@ -188,13 +191,24 @@ fun ConnectionScreen(
         }
         permissionLauncher.launch(permissions.toTypedArray())
         // Only once per process: coming back here while a session runs must stay here, not bounce
-        // straight back into the server screen.
-        viewModel.resumeExistingConnectionOnce(onConnected)
+        // straight back into the server screen. A link outranks even that.
+        if (serverLink == null) {
+            viewModel.resumeExistingConnectionOnce(onConnected)
+        }
     }
 
     LaunchedEffect(autoReconnect) {
-        if (autoReconnect) {
+        if (autoReconnect && serverLink == null) {
             viewModel.tryAutoReconnect(onConnected)
+        }
+    }
+
+    LaunchedEffect(serverLink) {
+        serverLink?.let { link ->
+            viewModel.applyServerLink(link)
+            scope.launch { pagerState.animateScrollToPage(0) }
+            showBottomSheet = true
+            onServerLinkConsumed()
         }
     }
 

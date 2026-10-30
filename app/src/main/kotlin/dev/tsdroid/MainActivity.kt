@@ -2,6 +2,7 @@ package dev.tsdroid
 
 import android.os.Bundle
 import android.content.Context
+import android.content.Intent
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -13,6 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dev.tsdroid.data.SettingsStore
+import dev.tsdroid.data.TsServerLink
+import dev.tsdroid.data.TsServerLinkParser
 import dev.tsdroid.ui.theme.TsDroidTheme
 import dev.tsdroid.ui.component.GlassOverlayHost
 import dev.tsdroid.ui.component.LocalGlassOverlayHost
@@ -27,6 +30,8 @@ import kotlinx.coroutines.runBlocking
 import dev.tsdroid.service.TsConnectionService
 
 class MainActivity : ComponentActivity() {
+
+    private var pendingServerLink by mutableStateOf<TsServerLink?>(null)
 
     override fun attachBaseContext(newBase: Context) {
         // The language has to be settled before anything is inflated, so it is the first thing the
@@ -46,6 +51,10 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (savedInstanceState == null) {
+            pendingServerLink = TsServerLinkParser.parse(intent.dataString)
+        }
+
         enableEdgeToEdge()
         setContent {
             val context = LocalContext.current
@@ -75,7 +84,11 @@ class MainActivity : ComponentActivity() {
                             // it. See GlassDialog.kt.
                             val overlayHost = rememberGlassOverlayHostState()
                             CompositionLocalProvider(LocalGlassOverlayHost provides overlayHost) {
-                                AppNavigation(initialAnimeBackground = anime)
+                                AppNavigation(
+                                    initialAnimeBackground = anime,
+                                    serverLink = pendingServerLink,
+                                    onServerLinkConsumed = { pendingServerLink = null },
+                                )
                             }
                             GlassOverlayHost(overlayHost)
                         }
@@ -87,6 +100,11 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        TsServerLinkParser.parse(intent.dataString)?.let { pendingServerLink = it }
     }
 
     override fun onStart() {
