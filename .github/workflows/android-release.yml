@@ -1,15 +1,15 @@
 name: Android Release (Signed APK → GitHub Release)
 
-# 推送 v*.*.*-Han 格式的 tag 自动构建正式签名包并发布 Release。
-# 应用内「检查更新」读取的就是这里发布的 latest 正式 Release：
-#   - Release 必须是正式发布（非 draft / 非 prerelease）
-#   - 资产里有且仅有一个 .apk（UpdateChecker 取第一个以 .apk 结尾的资产）
+# Pushing a tag in the format `v*.*.*-Han` automatically triggers the build of a production-signed package and the creation of a Release.
+# The "Check for Updates" feature within the app retrieves the latest official release published here:
+#   - The release must be an official release (not a draft or a pre-release)
+#   - There is exactly one .apk file among the assets (UpdateChecker selects the first asset that ends with .apk)
 on:
   push:
     tags:
       - 'v*.*.*-Han'
-  # 允许手动重跑：在 Actions 页面选择某个 tag 作为 ref 触发即可，
-  # GITHUB_REF_NAME 仍然是 tag 名，产物与推送 tag 完全一致。
+  # Allow manual rerun: Simply select a tag as the ref on the Actions page to trigger the action.
+  # GITHUB_REF_NAME remains the tag name, and the resulting artifacts are identical to those from the original tag push.
   workflow_dispatch:
 
 permissions:
@@ -30,8 +30,8 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      # 防止忘改版本号：tag 必须与 build.gradle.kts 里的 versionName 一致，
-      # 否则应用内检查更新会判错版本
+      # Prevent forgetting to update the version number: the tag must match the `versionName` in `build.gradle.kts`;
+      # otherwise, the in-app update check will incorrectly identify the version
       - name: Preflight — tag must match versionName
         run: |
           TAG_VERSION="${GITHUB_REF_NAME#v}"
@@ -69,8 +69,8 @@ jobs:
 
       - name: Rename APK and compute SHA-256
         run: |
-          # 资产名沿用本仓库既有约定（此前为 TS6_Droid_Han-2.1.5.apk）：
-          # 去掉 tag 的 v 前缀与 -Han 后缀，得到 TS6_Droid_Han-<版本>.apk
+          # Asset naming follows the existing convention for this repository (previously TS6_Droid_Han-2.1.5.apk):
+          # Remove the 'v' prefix and '-Han' suffix from the tag to produce TS6_Droid_Han-<version>.apk
           VERSION="${GITHUB_REF_NAME#v}"
           VERSION="${VERSION%-Han}"
           NAME="TS6_Droid_Han-${VERSION}.apk"
@@ -82,8 +82,8 @@ jobs:
       - name: Pick release notes
         id: notes
         run: |
-          # 每个标签可以带一份手写发行说明：release-notes/<tag>.md
-          # 没有就用下面的通用正文，发版不会因为缺文件失败。
+          # Each tag can include a handwritten set of release notes: release-notes/<tag>.md
+          # If none is provided, the generic body text below will be used; the release process will not fail due to a missing file.
           NOTES="release-notes/${GITHUB_REF_NAME}.md"
           if [ -f "$NOTES" ]; then
             echo "path=$NOTES" >> "$GITHUB_OUTPUT"
@@ -99,15 +99,15 @@ jobs:
           files: |
             ${{ env.ASSET }}
             ${{ env.ASSET }}.sha256
-          # body_path 为空时 action 会退回 body
+          # When `body_path` is empty, `action` defaults back to `body`
           body_path: ${{ steps.notes.outputs.path }}
           body: |
             TS6 Droid 简中版 ${{ github.ref_name }}
 
-            - 正式签名安装包：`${{ env.ASSET }}`（可直接覆盖更新）
-            - SHA-256 校验值见同名 `.sha256` 文件
-            - 本次更新要点见 [README 更新日志](https://github.com/${{ github.repository }}/blob/main/README.md#更新日志)
-            - 本 tag 对应完整源码（GPLv3）
+            - Officially signed installation package: `${{ env.ASSET }}` (can be used for direct, in-place updates)
+            - For the SHA-256 checksum, please refer to the corresponding `.sha256` file
+            - For key updates in this release, see the [README changelog](https://github.com/${{ github.repository }}/blob/main/README.md#更新日志)
+            - Full source code for this tag (GPLv3)
           generate_release_notes: true
           fail_on_unmatched_files: true
 

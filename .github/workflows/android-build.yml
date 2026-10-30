@@ -6,7 +6,7 @@ on:
       - main
       - master
   pull_request:
-  workflow_dispatch: # 允许你在 GitHub 页面上点击手动触发
+  workflow_dispatch: # Allows you to trigger actions manually from the GitHub page
 
 jobs:
   build:
@@ -26,8 +26,8 @@ jobs:
       - name: Ensure Gradle wrapper is executable
         run: chmod +x ./gradlew
 
-      # 💡 核心：利用 -x 参数强制跳过原作者的 Rust 编译任务
-      # Gradle 会聪明地直接把你刚刚上传的 jniLibs 里的现成 .so 库打包打包带走
+      # 💡 Key point: Use the `-x` flag to force the skipping of the original author's Rust compilation task
+      # Gradle is smart enough to automatically pick up the pre-built .so libraries you’ve placed in the `jniLibs` directory and include them in the final package
       - name: Run Unit Tests
         run: ./gradlew --no-daemon testDebugUnitTest -x buildRustLibs
 
