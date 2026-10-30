@@ -7,6 +7,7 @@
     <string name="accessibility_service_desc">TeamSpeak 6 Global Voice Controller</string>
     <string name="language_simplified_chinese">简体中文</string>
     <string name="language_english">English</string>
+    <string name="language_persian">فارسی</string>
     <string name="language_french">Français</string>
     <string name="language_change_title">Change language</string>
     <string name="language_change_message">The app needs to restart to apply %1$s.</string>
@@ -235,7 +236,7 @@
     <string name="about_repo_link">🔗 Click to visit the GitHub repository</string>
     <string name="about_warning_title">⚠️ Anti-Fraud (Solemn Disclaimer)</string>
     <string name="about_warning_desc">This program is a purely public-welfare, non-profit product for open-source technical exchange. It is completely FREE and completely OPEN-SOURCE! Any form of commercial peddling, packaging buyout, or bundled key-code charging is strictly prohibited. If you obtained this software through paid channels (such as second-hand bots, trading platforms, paid downloading services, etc.), you have been scammed! Please immediately initiate a refund claim for infringement on the platform, and head to the official open-source repository to report the black-market scalpers with your real name!</string>
-    <string name="anime_background">I love anime</string>
+    <string name="anime_background">Change background image & Colors</string>
     <string name="noise_suppression">Microphone noise suppression</string>
     <string name="about_contributors_title">Contributors</string>
     <string name="about_contributions_count">%1$d contributions</string>
@@ -253,7 +254,7 @@
     <string name="app_details_settings">App permissions &amp; auto-start</string>
     <string name="app_details_settings_desc">On Xiaomi/Huawei/OPPO/vivo ROMs, allow auto-start, unrestricted background running and background pop-ups here</string>
 
-    <!-- 应用内日志查看器 -->
+    <!-- In-app log viewer -->
     <string name="diag_log_title">Diagnostic log</string>
     <string name="diag_log_hint">Shows this process log only (no adb needed). Tap refresh to reload.</string>
     <string name="diag_log_refresh">Refresh</string>
@@ -262,7 +263,7 @@
     <string name="diag_log_loading">Loading\u2026</string>
     <string name="back">Back</string>
 
-    <!-- 服务器信息卡 -->
+    <!-- Server Information Card -->
     <string name="server_info">Server info</string>
     <string name="server_platform_version">Platform / version</string>
     <string name="server_clients">Clients online</string>

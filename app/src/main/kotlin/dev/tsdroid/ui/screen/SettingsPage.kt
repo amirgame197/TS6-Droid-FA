@@ -90,11 +90,12 @@ fun SettingsPage(
     val languageOptions = listOf(
         "zh" to stringResource(R.string.language_simplified_chinese),
         "en" to stringResource(R.string.language_english),
+        "fa" to stringResource(R.string.language_persian),
         "fr" to stringResource(R.string.language_french),
     )
-    val selectedLanguageTag by settingsStore.language.collectAsStateWithLifecycle(initialValue = "zh")
+    val selectedLanguageTag by settingsStore.language.collectAsStateWithLifecycle(initialValue = "en")
     val selectedLanguageLabel = languageOptions.firstOrNull { it.first == selectedLanguageTag }?.second
-        ?: stringResource(R.string.language_simplified_chinese)
+        ?: stringResource(R.string.language_english)
     var languageMenuExpanded by remember { mutableStateOf(false) }
     var pendingLanguageTag by remember { mutableStateOf<String?>(null) }
     var showLogViewer by remember { mutableStateOf(false) }

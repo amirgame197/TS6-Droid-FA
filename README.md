@@ -470,10 +470,8 @@ This project is licensed under the GNU GPLv3. See the LICENSE file for details.
 
 ## Contributors
 
-Thanks to all the developers who have contributed to this project! (from the Chinese fork version)
+Thanks to all the developers who have contributed to this project!
 
-<a href="https://github.com/YUAXI/TS6_Droid_CN/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=YUAXI/TS6_Droid_CN&v=20260729" />
+<a href="https://github.com/amirgame197/TS6-Droid-FA/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=amirgame197/TS6-Droid-FA&v=20261101" />
 </a>
-
-<sub>And me hehe</sub>
