@@ -11,7 +11,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.yuaxi.ts6droid.cn"
+        applicationId = "com.app.ts6droid"
         minSdk = 29
         targetSdk = 35
         versionCode = 13
