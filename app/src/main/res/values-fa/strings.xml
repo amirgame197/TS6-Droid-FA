@@ -29,23 +29,23 @@
     <string name="channel_password_required">This channel needs a password</string>
     <string name="browse_channels">Browse channels</string>
     <string name="connecting">Connecting\u2026</string>
-    <string name="connect">Connect</string>
+    <string name="connect">اتصال</string>
     <string name="add_bookmark">Add bookmark</string>
     <string name="edit_bookmark">Edit bookmark</string>
     <string name="save">Save</string>
     <string name="bookmarks">Bookmarks</string>
     <string name="no_bookmarks">No bookmarks</string>
-    <string name="manual_connection">Manual connection</string>
+    <string name="manual_connection">افزودن سرور</string>
     <string name="auto_reconnect">Auto-reconnect</string>
-    <string name="remove">Remove</string>
-    <string name="edit">Edit</string>
+    <string name="remove">حذف</string>
+    <string name="edit">ویرایش</string>
     <string name="select_channel">Select channel</string>
     <string name="cancel">Cancel</string>
 
     <!-- ServerScreen -->
     <string name="server">Server</string>
     <string name="disconnect">Disconnect</string>
-    <string name="settings">Settings</string>
+    <string name="settings">تنظیمات</string>
     <string name="audio_gain">Audio gain</string>
     <string name="audio_gain_value">×%1$.1f</string>
     <string name="mic_gain">Mic gain</string>
@@ -62,7 +62,7 @@
     <string name="unmute_mic">Unmute mic</string>
     <string name="tab_channel">Channel</string>
     <string name="tab_private">PM</string>
-    <string name="tab_home">Home</string>
+    <string name="tab_home">خانه</string>
     <string name="tab_settings">Settings</string>
     <string name="no_connection">No connections</string>
     <string name="wallpaper_cache_size">Wallpaper cache: %1$s MB (%2$d images)</string>
