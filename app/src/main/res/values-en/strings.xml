@@ -107,7 +107,7 @@
     <string name="crop_hint">Drag the white frame to select the area</string>
     <string name="section_appearance">Appearance</string>
     <string name="section_audio">Audio</string>
-    <!-- 身份导出/导入 -->
+    <!-- Identity Export/Import -->
     <string name="identity_section">Identity</string>
     <string name="identity_uid">Identity UID: %1$s</string>
     <string name="identity_uid_none">Not created yet (generated on first connection)</string>

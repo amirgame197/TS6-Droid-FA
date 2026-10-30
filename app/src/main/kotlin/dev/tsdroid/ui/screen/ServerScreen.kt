@@ -752,7 +752,7 @@ fun ServerScreen(
     // Temporary nickname: applies to this connection only, and the identity file
     // is never touched (see ServerViewModel.changeTemporaryNickname).
     if (nicknameDialogOpen) {
-        val selfName = users.firstOrNull { it.id == viewModel.myClientId }?.nickname ?: ""
+        val selfName = users.firstOrNull { it.id == viewModel.myClientId }?.nickname ?: "AndroidUser"
         NicknameDialog(
             currentNickname = selfName,
             wallpaper = glassWallpaper,

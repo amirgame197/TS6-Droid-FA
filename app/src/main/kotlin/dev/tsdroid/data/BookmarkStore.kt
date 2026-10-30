@@ -119,7 +119,7 @@ class BookmarkStore(private val context: Context) {
                 ServerBookmark(
                     name = obj.optString("name", ""),
                     address = obj.optString("address", ""),
-                    nickname = obj.optString("nickname", ""),
+                    nickname = obj.optString("nickname", "AndroidUser"),
                     password = obj.optionalString("password"),
                     channel = obj.optionalString("channel"),
                     serverName = obj.optionalString("serverName"),
@@ -162,7 +162,7 @@ class BookmarkStore(private val context: Context) {
                     ServerBookmark(
                         name = fields["name"] ?: "",
                         address = fields["address"] ?: "",
-                        nickname = fields["nickname"] ?: "",
+                        nickname = fields["nickname"] ?: "AndroidUser",
                         password = fields["password"]?.takeIf { it != "null" },
                         channel = fields["channel"]?.takeIf { it != "null" },
                         serverName = fields["serverName"]?.takeIf { it != "null" },
